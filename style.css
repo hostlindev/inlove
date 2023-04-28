@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at 50%, #ff40a0, #e61980);
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+
+}
+
+h1 {
+    font-size: 5rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-button:hover {
+    cursor: pointer;
+}
+
+.img-yes {
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 5px;
+    background: url("/moto.jpeg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.img-no {
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 5px;
+    background: url("/pablo.jpg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    font-size: 1rem;
+    border-radius: 10px;
+    box-shadow: 5px 10px #8888;
+    background: #fff;
+    border: none;
+
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 300;
+}
+
+.btn-yes:hover {
+    -webkit-animation: tiembla 0.5s;
+    transition: 2s;
+    background: yellow;
+}
+
+@-webkit-keyframes tiembla {
+    0% {
+        -webkit-transform: rotateZ(-5deg);
+    }
+
+    50% {
+        -webkit-transform: rotateZ(0deg) scale(.8);
+    }
+
+    100% {
+        -webkit-transform: rotateZ(5deg);
+    }
+}
+
+
+/* Corazon */
+
+.container-heart {
+    display: none;
+}
+
+.heart {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #ff4757;
+    transform: rotate(-45deg);
+    box-shadow: -10px -10px 90px #ff4757;
+    animation: animate .6s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(-45deg) scale(1.07);
+    }
+
+    80% {
+        transform: rotate(-45deg) scale(1.0);
+    }
+
+    100% {
+        transform: rotate(-45deg) scale(0.8);
+    }
+
+}
+
+.heart::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: #ff4757;
+    border-radius: 50%;
+}
+
+.heart::after {
+    content: '';
+    position: absolute;
+    right: -50%;
+    width: 70px;
+    height: 70px;
+    background: #ff4757;
+    border-radius: 50%;
+}

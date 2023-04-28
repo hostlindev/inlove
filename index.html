@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fuente de google0 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,500&display=swap" rel="stylesheet">
+    <!-- Fin de fuente -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="corazon.png" />
+
+    <title>Unión de dos amores </title>
+
+</head>
+
+<body>
+
+    <header>
+        <h1 id="title">¿Quieres ser mi novia?</h1>
+    </header>
+
+    <main>
+
+        <div id="optyes" class="container-button">
+            <div class="img-yes">
+                <img src="" alt="">
+            </div>
+            <div id="open" class="btn btn-yes" onclick="yes()">
+                <span class="text">Sí, quiero ser tu novia</span>
+            </div>
+        </div>
+
+        <div id="optno" class="container-button">
+            <div class="img-no">
+                <img src="" alt="">
+            </div>
+            <div class="btn" onmouseenter="not(event)">
+                <span class="text">No quiero ser tu novia</span>
+            </div>
+        </div>
+
+        <div id="heart" class="container-heart">
+            <div class="heart"></div>
+        </div>
+
+        <script>
+
+
+            function not(evt) {
+                let target = evt.target;
+                let maxWidth = window.innerWidth;
+                let maxHeight = window.innerHeight;
+
+                let randomWidth = getRandomInt(0, maxWidth - target.offsetWidth);
+                let randomHeight = getRandomInt(0, maxHeight - target.offsetHeight);
+
+                target.style.position = 'absolute';
+                target.style.top = randomHeight + 'px';
+                target.style.left = randomWidth + 'px';
+            }
+
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            var heart = document.getElementById("heart");
+            var open = document.getElementById("open");
+
+            var optyes = document.getElementById("optyes");
+            var optno = document.getElementById("optno");
+
+            var title = document.getElementById("title")
+
+
+            function yes() {
+                heart.style.display = "block";
+
+                optyes.style.display = "none";
+                optno.style.display = "none";
+
+                title.innerText = "Felicidades, vas a tener al mejor novio del mundo..."
+            }
+
+            open.addEventListener("click", yes);
+
+        </script>
+
+    </main>
+
+</body>
+
+</html>
